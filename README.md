@@ -10,6 +10,8 @@ npm ci
 
 to install node modules.
 
+Create a .env or .env.local file and place your TICKETMASTER_API_KEY in there
+
 Run the development server:
 
 ```bash
