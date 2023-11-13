@@ -10,7 +10,7 @@ const EventRequestSchema = z.object({
   city: z.string(),
 });
 
-const TICKETMASTER_API_KEY = "2mFzAGUhyuqo23n1HvkdHOTgXJqgLOQu";
+const TICKETMASTER_API_KEY = process.env.TICKETMASTER_API_KEY!;
 
 export async function GET(request: NextRequest) {
   try {
