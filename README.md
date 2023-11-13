@@ -2,7 +2,15 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, run
+
+```bash
+npm ci
+```
+
+to install node modules.
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -16,21 +24,15 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## DECISION MAKING
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+I have decided to use NEXT JS as the framework for the Visory code challange.
 
-## Learn More
+The reason for it was that I have been studying the new version of next with Next 14, utilising Server actions / components to communicate with APIs.
 
-To learn more about Next.js, take a look at the following resources:
+The process works as:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Inside the /src/app/api directory I have the route.ts file with a GET request to the Ticket master events API.
+- I have used ZOD as the npm package for schema validation, to make sure the params being passed through the query params were of the expected type.
+- I have then used the DatePicker component from Material UI (MUI) to select the start and end date times as required, and a simple text input for the Location filter (city).
+- Then, once the button is clicked, it's then rendered a list of events with the name, date, time, and venue.
